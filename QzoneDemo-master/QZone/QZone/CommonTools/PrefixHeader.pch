@@ -1,0 +1,45 @@
+//
+//  PrefixHeader.pch
+//  QZone
+//
+//  Created by ShenYj on 16/8/3.
+//  Copyright © 2016年 ___ShenYJ___. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+
+#ifdef __OBJC__
+
+
+// 头文件
+#import "Masonry.h"
+#import <UIKit/UIKit.h>
+#import "UIImage+Color.h"
+#import "UIColor+RandomColor.h"
+
+
+
+
+// 宏
+#define isiPhone ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPhone) 
+#define kbackgroundColor [UIColor colorWithWhite:34 / 255.0 alpha:1.0]
+// 常量
+static const CGFloat kMenumButtonPortraitHeight = 60;
+static const CGFloat kMenumButtonLandScapeHeight = 90;
+
+// NSLog调试
+#ifdef DEBUG
+#define NSLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+
+#endif
+
+#endif /* PrefixHeader_pch */
